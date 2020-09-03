@@ -1,0 +1,24 @@
+{% extends 'base/index.html' %}
+
+{% block content %}
+    <h2>ƏTRAFLI</h2>
+    <div class="my-3">
+        <span>Id:{{ user.id }}</span>
+    </div>
+    <div class="my-3">
+        <span>Ad:{{ user.name }}</span>
+    </div>
+    <div class="my-3">
+        <span>Soyad:{{ user.surname }}</span>
+    </div>
+    <div class="my-3">
+        <span>Poçt ünvanı:{{ user.email }}</span>
+    </div>
+    <div class="my-3">
+        <span>Cins:{{ user.showGender }}</span>
+    </div>
+    <div class="my-3">
+        <span>Cins:{{ user.age }}</span>
+    </div>
+    <a href="/" class="btn btn-lg btn-primary"><- Əsas Səhifəyə Qayıt</a>
+{% endblock %}

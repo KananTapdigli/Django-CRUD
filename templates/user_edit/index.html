@@ -1,0 +1,18 @@
+{% extends 'base/index.html' %}
+
+{% block content %}
+        <h2>İSTİFADƏÇİ REDAKTƏSİ</h2>
+<form  method = 'POST' enctype="multipart/form-data">
+        {% csrf_token %}
+        <table class = 'w-50 table ' style="border-radius:10px;">
+            {% for field in form %}
+            <div class="form-group my-4">
+                {{ field.label }}
+                {{ field }}
+            </div>
+            {% endfor %}
+        </table>
+        <button type="submit" class="btn btn-lg btn-primary">Düzəliş et</button>
+        <a href="/" class="btn btn-lg btn-primary"><- Əsas Səhifəyə Qayıt</a>
+</form>
+{% endblock %}

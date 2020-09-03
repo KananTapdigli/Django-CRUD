@@ -1,0 +1,36 @@
+{% extends 'base/index.html' %}
+
+{% block content %}
+       <a href="{% url 'create' %}" class="btn btn-primary my-4">+ Yeni istifadeci</a>
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Ad</th>
+                <th scope="col">Soyad</th>
+                <th scope="col">Poçt ünvanı</th>
+                <th scope="col">Yaş</th>
+                <th scope="col">Cins</th>
+                <th scope="col">Əməliyyatlar</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for user in user_list %}
+            <tr>
+                <th>{{ user.id }}</th>
+                <td>{{ user.name }}</td>
+                <td>{{ user.surname }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.age }}</td>
+               <td>{{  user.show_gender }}</td>
+                <td>
+                    <a href="{% url 'edit' id=user.id %}" class="btn btn-primary">Düzəliş et</a>
+                    <a href="{% url 'details' id=user.id %}" class="btn btn-info">Ətraflı</a>
+                    <a href="{% url 'delete' id=user.id %}" class="btn btn-danger">Sil</a>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+{% endblock %}
